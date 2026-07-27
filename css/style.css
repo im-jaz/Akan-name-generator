@@ -404,3 +404,31 @@ footer p {
     margin-bottom: 10px;
     font-size: .95rem;
 }
+
+/* custom scroll bar */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #111;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #D4AF37;
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #E4C76A;
+
+}
