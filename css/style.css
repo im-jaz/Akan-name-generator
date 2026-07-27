@@ -361,6 +361,7 @@ cta {
 .cta h2 {
     font-size: 3rem;
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .cta p {
@@ -371,7 +372,7 @@ cta {
 
 .cta-button {
     display: inline-block;
-    background: #111;
+    background: #D4AF37;
     color: #F7F3EC;
     padding: 18px 45px;
     border-radius: 50px;
