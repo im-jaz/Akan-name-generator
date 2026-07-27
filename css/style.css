@@ -157,3 +157,39 @@ nav ul li a:hover {
     background: #E4C76A;
     box-shadow: 0 12px 30px rgba(212,175,55,.35);
 }
+
+/* history section */
+
+.history {
+    background-color: #181818;
+}
+
+.history-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #232323;
+    padding: 40px 30px;
+    border-radius: 18px;
+    border-top: 4px solid #D4AF37;
+    transition: 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.card h3 {
+    color: #D4AF37;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+}
+
+.card p {
+    color: #CFCFCF;
+    font-size: .98rem;
+}
