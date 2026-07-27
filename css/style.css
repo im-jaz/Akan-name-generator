@@ -193,3 +193,59 @@ nav ul li a:hover {
     color: #CFCFCF;
     font-size: .98rem;
 }
+
+/* discover */
+
+.why-discover {
+    background-color: #0F0F0F;
+}
+
+.reason-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 35px;
+}
+
+.reason-card {
+    background: #232323;
+    border-radius: 18px;
+    padding: 45px 30px;
+    text-align: center;
+    transition: .35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gold accent line */
+
+.reason-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #D4AF37;
+
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.reason-card:nth-child(2) {
+    margin-top: 30px;
+}
+
+.reason-card h3 {
+    color: #D4AF37;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+
+}
+
+.reason-card p {
+    color: #D0D0D0;
+    font-size: .98rem;
+}
