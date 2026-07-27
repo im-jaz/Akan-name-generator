@@ -249,3 +249,59 @@ nav ul li a:hover {
     color: #D0D0D0;
     font-size: .98rem;
 }
+
+/* how it works */
+
+.how-it-works {
+    background-color: #181818;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.step {
+    flex: 1;
+    min-width: 220px;
+    background: #232323;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.35s ease;
+    border-bottom: 4px solid #D4AF37;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.step span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #D4AF37;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    color: #D4AF37;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.step p {
+    color: #D0D0D0;
+    font-size: .95rem;
+}
+
