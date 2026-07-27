@@ -384,3 +384,23 @@ cta {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,.35);
 }
+
+/* footer */
+
+footer {
+    background: #090909;
+    text-align: center;
+    padding: 50px 10%;
+}
+
+footer h2 {
+    color: #D4AF37;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #BDBDBD;
+    margin-bottom: 10px;
+    font-size: .95rem;
+}
