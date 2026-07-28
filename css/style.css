@@ -295,44 +295,6 @@ nav ul li a:hover {
     box-shadow: 0 12px 30px rgba(212,175,55,.35);
 }
 
-/* cta */
-
-cta {
-    background: linear-gradient(135deg, #D4AF37, #B68B21);
-    text-align: center;
-    color: #111;
-}
-
-.cta h2 {
-    font-size: 3rem;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.cta p {
-    font-size: 1.1rem;
-    max-width: 650px;
-    margin: auto auto 40px;
-    text-align: center;
-}
-
-.cta-button {
-    display: inline-block;
-    background: #D4AF37;
-    color: #F7F3EC;
-    padding: 18px 45px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: .3s;
-    justify-content: center;
-}
-
-.cta-button:hover {
-    background: #232323;
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,.35);
-}
-
 /* footer */
 
 footer {
