@@ -780,3 +780,41 @@ header{
     color:#cfcfcf;
     font-size:.97rem;
 }
+
+/* spirit animals */
+
+.guardian{
+    background:#111111;
+}
+
+.guardian .container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.guardian-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:25px;
+}
+
+.guardian-text p{
+    color:#d2d2d2;
+    margin-bottom:20px;
+}
+
+.guardian-image{
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+}
+
+.guardian-image img{
+    transition:.6s ease;
+}
+
+.guardian-image:hover img{
+    transform:scale(1.08);
+}
