@@ -612,4 +612,41 @@ header{
     font-size:1.1rem;
 }
 
+/* intro */
+
+.intro{
+    background:#111111;
+}
+
+.intro .container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.intro-image{
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+.intro-image img{
+    transition:.6s;
+}
+
+.intro-image:hover img{
+    transform:scale(1.08);
+}
+
+.intro-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:25px;
+}
+
+.intro-text p{
+    margin-bottom:20px;
+    color:#c9c9c9;
+}
 
