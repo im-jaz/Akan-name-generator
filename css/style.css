@@ -688,3 +688,48 @@ header{
     transform:scale(1.08);
 }
 
+/* days of the week */
+
+.days{
+    background:#111111;
+}
+
+.days-grid{
+    width:90%;
+    max-width:1200px;
+    margin:60px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.day-card{
+    background:#181818;
+    padding:35px 30px;
+    border:1px solid rgba(212,175,55,.15);
+    border-radius:18px;
+    text-align:center;
+    transition:.35s ease;
+}
+
+.day-card:hover{
+    transform:translateY(-10px);
+    border-color:#D4AF37;
+    box-shadow:0 15px 35px rgba(212,175,55,.18);
+}
+
+.day-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:1.8rem;
+    color:#D4AF37;
+    margin-bottom:20px;
+}
+
+.day-card p{
+    color:#d6d6d6;
+    margin:10px 0;
+}
+
+.day-card strong{
+    color:#ffffff;
+}
