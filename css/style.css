@@ -818,3 +818,48 @@ header{
 .guardian-image:hover img{
     transform:scale(1.08);
 }
+
+/* fun facts */
+
+.facts{
+    background:#090909;
+}
+
+.facts-grid{
+    width:90%;
+    max-width:1200px;
+    margin:60px auto 0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.fact-card{
+    background:#151515;
+    padding:40px 30px;
+    border-radius:18px;
+    border:1px solid rgba(212,175,55,.15);
+    transition:.35s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.fact-card:hover{
+    transform:translateY(-10px);
+    border-color:#D4AF37;
+    box-shadow:0 18px 40px rgba(212,175,55,.15);
+}
+
+.fact-card span{
+    display:block;
+    font-size:3rem;
+    font-weight:700;
+    color:#D4AF37;
+    margin-bottom:20px;
+    font-family:'Playfair Display',serif;
+}
+
+.fact-card p{
+    color:#d2d2d2;
+}
+
