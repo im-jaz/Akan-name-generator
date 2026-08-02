@@ -45,112 +45,62 @@
 
 <section class="generator">
 
-    <div class="generator-container">
+    <div class="generator-form">
 
-        <div class="generator-info">
+        <form id="akanForm">
 
-            <span class="small-title">
-                AKAN NAME GENERATOR
-            </span>
+            <div class="input-group">
 
-            <h2>
-                Your Story Begins Here
-            </h2>
+                <label for="name">
+                    First Name
+                </label>
 
-            <p>
-
-                Complete the form to reveal
-                your Akan day name, guardian
-                animal, personality traits,
-                and the meaning behind your
-                cultural identity.
-
-            </p>
-
-            <div class="info-list">
-
-                <div class="info-item">
-                    <i class="fas fa-calendar-day"></i>
-                    <span>Day of Birth</span>
-                </div>
-
-                <div class="info-item">
-                    <i class="fas fa-user"></i>
-                    <span>Gender-Based Akan Name</span>
-                </div>
-
-                <div class="info-item">
-                    <i class="fas fa-feather"></i>
-                    <span>Guardian Animal</span>
-                </div>
-
-                <div class="info-item">
-                    <i class="fas fa-star"></i>
-                    <span>Personality Traits</span>
-                </div>
+                <input
+                     type="text"
+                     id="name"
+                     placeholder="Enter your first name">
 
             </div>
 
-        </div>
+            <div class="input-group">
 
-    
+                <label for="dob">
+                     Date of Birth
+                </label>
 
-        <div class="generator-form">
+                <input
+                     type="date"
+                     id="dob">
 
-            <form id="akanForm">
+            </div>
 
-                <div class="input-group">
+             <div class="input-group">
 
-                    <label for="name">
-                        First Name
+                 <label>
+                     Gender
+                </label>
+
+                 <div class="gender-options">
+
+                    <label class="radio-option">
+
+                        <input
+                        type="radio"
+                        name="gender"
+                        value="male">
+
+                        <span>Male</span>
+
                     </label>
 
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your first name">
+                    <label class="radio-option">
 
-                </div>
+                        <input
+                        type="radio"
+                        name="gender"
+                        value="female">
 
-                <div class="input-group">
-
-                    <label for="dob">
-                        Date of Birth
-                    </label>
-
-                    <input
-                        type="date"
-                        id="dob">
-
-                </div>
-
-                <div class="input-group">
-
-                    <label>
-                        Gender
-                    </label>
-
-                    <div class="gender-options">
-
-                        <label class="radio-option">
-
-                            <input
-                            type="radio"
-                            name="gender"
-                            value="male">
-
-                            <span>Male</span>
-
-                        </label>
-
-                        <label class="radio-option">
-
-                            <input
-                            type="radio"
-                            name="gender"
-                            value="female">
-
-                            <span>Female</span>
+                        <span>Female</span>
 
                         </label>
 
@@ -169,8 +119,6 @@
             </form>
 
         </div>
-
-    </div>
 
 </section>
 
