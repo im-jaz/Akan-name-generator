@@ -21,7 +21,7 @@ git clone git@github.com:im-jaz/Akan-name-generator.git
 2. Navigate into the project folder.
 
 ```bash
-cd akan-origins
+cd Akan-name-generator
 ```
 
 3. Open the project using Visual Studio Code.
@@ -56,7 +56,7 @@ No additional installations are required.
 
 **Email:** amungajazmine@gmail.com
 
-**GitHub:** https://github.com/your-github-username
+**GitHub:** https://github.com/im-jaz
 
 ---
 
