@@ -15,7 +15,7 @@ The website introduces users to the history of Akan names before allowing them t
 1. Clone the repository.
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:im-jaz/Akan-name-generator.git
 ```
 
 2. Navigate into the project folder.
