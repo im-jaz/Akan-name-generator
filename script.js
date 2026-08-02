@@ -1,7 +1,7 @@
 
-// AKAN NAME GENERATOR
+// Akan Name Generator
 
-// Male akan names
+// Male Akan names
 const maleNames = [
     "Kwasi",
     "Kwadwo",
@@ -24,7 +24,7 @@ const femaleNames = [
 ];
 
 // Days of the week
-const days = [
+const weekDays = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -40,168 +40,274 @@ const guardians = [
     {
         animal: "Python",
         akan: "Eke",
-        description: "Wise, calm and deeply connected to tradition.",
-        traits: ["Wisdom", "Patience", "Protection", "Mystery"]
+        image: "images/python.png",
+        description: "Wise, patient and deeply connected to tradition.",
+        traits: [
+            "Wisdom",
+            "Patience",
+            "Protection",
+            "Mystery"
+        ]
     },
 
     {
         animal: "Spider",
         akan: "Anansi",
-        description: "Creative, clever and an excellent storyteller.",
-        traits: ["Intelligence", "Creativity", "Strategy", "Humour"]
+        image: "images/spider.png",
+        description: "Creative and clever. A natural storyteller.",
+        trait: [
+            "Strategy",
+        ]
     },
 
     {
         animal: "Leopard",
         akan: "Leopard",
-        description: "Fearless and confident in every challenge.",
-        traits: ["Courage", "Leadership", "Confidence", "Power"]
+        image: "images/leopard.png",
+        description: "Fearless and courageous in every challenge.",
+        traits: [
+            "Power",
+        ]
     },
 
     {
         animal: "Elephant",
         akan: "Elephant",
+        image: "images/elephant.png",
         description: "Strong, dependable and respected.",
-        traits: ["Strength", "Loyalty", "Wisdom", "Stability"]
+        traits: [
+            "Strength",
+        ]
     },
 
     {
         animal: "Crocodile",
         akan: "Crocodile",
-        description: "Patient and highly adaptable.",
-        traits: ["Resilience", "Survival", "Focus", "Protection"]
+        image: "images/crocodile.png",
+        description: "Patient, resilient and highly adaptable.",
+        traits: [
+            "Resilience",
+        ]
     },
 
     {
         animal: "Eagle",
         akan: "Eagle",
+        image: "images/eagle.png",
         description: "Visionary and ambitious.",
-        traits: ["Vision", "Freedom", "Determination", "Leadership"]
+        traits: [
+            "Determination", 
+        ]
     },
 
     {
         animal: "Lion",
         akan: "Lion",
-        description: "Bold, proud and inspiring.",
-        traits: ["Bravery", "Confidence", "Honor", "Authority"]
+        image: "images/lion.png",
+        description: "Bold, noble and inspiring.",
+        traits: [
+            "Authority",
+        ]
     }
 
 ];
 
-// FORM
+// DISCOVER PAGE
 
 const form = document.getElementById("akanForm");
 
-form.addEventListener("submit", function(event){
+if (form) {
 
-    event.preventDefault();
+    form.addEventListener("submit", function (event) {
 
-    const name = document.getElementById("name").value.trim();
+        event.preventDefault();
 
-    const dob = document.getElementById("dob").value;
+        const firstName = document.getElementById("name").value.trim();
 
-    const gender = document.querySelector('input[name="gender"]:checked');
+        const dob = document.getElementById("dob").value;
+
+        const gender = document.querySelector('input[name="gender"]:checked');
+
+        // Validation
+
+        if (firstName === "") {
+            alert("Please enter your first name.");
+            return;
+        }
+
+        if (dob === "") {
+            alert("Please choose your date of birth.");
+            return;
+        }
+
+        if (!gender) {
+            alert("Please select your gender.");
+            return;
+        }
+
+        // Split date into year, month and day
+
+        const parts = dob.split("-");
+
+        const year = parseInt(parts[0]);
+
+        const month = parseInt(parts[1]);
+
+        const day = parseInt(parts[2]);
+
+        // Assignment validation
+
+        if (day < 1 || day > 31) {
+            alert("Day must be between 1 and 31.");
+            return;
+        }
+
+        if (month < 1 || month > 12) {
+            alert("Month must be between 1 and 12.");
+            return;
+        }
+
+        // Century and year
+
+        const CC = Math.floor(year / 100);
+
+        const YY = year % 100;
+
+        // Akan formula
+
+        let dayIndex = (
+
+            Math.floor(CC / 4)
+
+            - (2 * CC)
+
+            - 1
+
+            + Math.floor((5 * YY) / 4)
+
+            + Math.floor((26 * (month + 1)) / 10)
+
+            + day
+
+        ) % 7;
+
+        // Ensure positive result
+
+        if (dayIndex < 0) {
+            dayIndex += 7;
+        }
+
+        // Akan name
+
+        let akanName;
+
+        if (gender.value === "male") {
+
+            akanName = maleNames[dayIndex];
+
+        } else {
+
+            akanName = femaleNames[dayIndex];
+
+        }
+
+        // Guardian
+
+        const guardian = guardians[dayIndex];
+
+        // Save data
+
+        const result = {
+
+            firstName: firstName,
+
+            gender: gender.value,
+
+            birthDay: weekDays[dayIndex],
+
+            akanName: akanName,
+
+            guardianAnimal: guardian.animal,
+
+            guardianAkan: guardian.akan,
+
+            guardianImage: guardian.image,
+
+            guardianDescription: guardian.description,
+
+            traits: guardian.traits
+
+        };
+
+        localStorage.setItem(
+            "akanResult",
+            JSON.stringify(result)
+        );
+
+        // Go to results page
+
+        window.location.href = "results.html";
+
+    });
+
+}
 
 
+// RESULTS PAGE
 
-    // Validation
 
-    if(name === ""){
+const storedResult = JSON.parse(localStorage.getItem("akanResult"));
 
-        alert("Please enter your first name.");
+if (storedResult && document.getElementById("welcomeMessage")) {
 
-        return;
+    document.getElementById("welcomeMessage").textContent =
+        `Welcome, ${storedResult.firstName}!`;
+
+    document.getElementById("akanName").textContent =
+        storedResult.akanName;
+
+    document.getElementById("birthDay").textContent =
+        storedResult.birthDay;
+
+    document.getElementById("genderResult").textContent =
+        storedResult.gender;
+
+    document.getElementById("guardianAnimal").textContent =
+        `${storedResult.guardianAkan} (${storedResult.guardianAnimal})`;
+
+    const description = document.getElementById("guardianDescription");
+
+    if (description) {
+        description.textContent =
+            storedResult.guardianDescription;
+    }
+
+    const image = document.getElementById("guardianImage");
+
+    if (image) {
+
+        image.src = storedResult.guardianImage;
+
+        image.alt = storedResult.guardianAnimal;
 
     }
 
-    if(dob === ""){
+    const traitsList = document.getElementById("traitsList");
 
-        alert("Please select your date of birth.");
+    if (traitsList) {
 
-        return;
+        traitsList.innerHTML = "";
 
-    }
+        storedResult.traits.forEach(function (trait) {
 
-    if(!gender){
+            const li = document.createElement("li");
 
-        alert("Please choose your gender.");
+            li.textContent = trait;
 
-        return;
+            traitsList.appendChild(li);
 
-    }
-
-
-
-    // Get weekday
-
-    const birthDate = new Date(dob);
-
-    const dayIndex = birthDate.getDay();
-
-
-
-    // Akan name
-
-    let akanName;
-
-    if(gender.value === "male"){
-
-        akanName = maleNames[dayIndex];
+        });
 
     }
 
-    else{
-
-        akanName = femaleNames[dayIndex];
-
-    }
-
-
-
-    // Guardian
-
-    const guardian = guardians[dayIndex];
-
-
-
-    // Save everything
-
-    const result = {
-
-        firstName: name,
-
-        gender: gender.value,
-
-        birthDay: days[dayIndex],
-
-        akanName: akanName,
-
-        guardianAnimal: guardian.animal,
-
-        guardianAkan: guardian.akan,
-
-        guardianImage: guardian.image,
-
-        guardianDescription: guardian.description,
-
-        traits: guardian.traits
-
-    };
-
-
-
-    localStorage.setItem(
-
-        "akanResult",
-
-        JSON.stringify(result)
-
-    );
-
-
-
-    // Go to results page
-
-    window.location.href = "results.html";
-
-});
+}
