@@ -406,50 +406,6 @@ nav ul li a:hover {
     line-height:1.8;
 }
 
-/* teaser section */
-
-.teaser {
-    background: linear-gradient(
-        135deg,
-        #1B1B1B,
-        #111111
-    );
-    text-align: center;
-}
-
-.teaser-content {
-    max-width: 850px;
-    margin: auto;
-}
-
-.teaser h2 {
-    font-size: 3rem;
-    color: #D4AF37;
-    margin-bottom: 30px;
-}
-
-.teaser p {
-    color: #D8D8D8;
-    font-size: 1.1rem;
-    margin-bottom: 45px;
-    line-height: 1.9;
-}
-
-.teaser-button {
-    display: inline-block;
-    background: #D4AF37;
-    color: #111;
-    padding: 18px 45px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: .3s;
-}
-
-.teaser-button:hover {
-    background: #E4C76A;
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(212,175,55,.35);
-}
 
 /* custom scroll bar */
 
