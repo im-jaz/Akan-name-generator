@@ -155,10 +155,7 @@ if (form) {
 
         const day = parseInt(parts[2]);
 
-        //validation
-
-        const currentYear = new Date().getFullYear();
-
+     
         //validation
 
 
@@ -325,4 +322,13 @@ if (storedResult && document.getElementById("welcomeMessage")) {
 
     }
 
+    const storedResult = JSON.parse(localStorage.getItem("akanResult"));
+
+    if (!storedResult) {
+        window.location.href = "discover.html";
+    }
+
+    // display the results here...
+
+    localStorage.removeItem("akanResult");
 }
