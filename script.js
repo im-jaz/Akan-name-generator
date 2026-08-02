@@ -155,18 +155,33 @@ if (form) {
 
         const day = parseInt(parts[2]);
 
-        // Assignment validation
+        //validation
 
-        if (day < 1 || day > 31) {
-            alert("Day must be between 1 and 31.");
-            return;
+        const currentYear = new Date().getFullYear();
+
+        //validation
+
+
+        const currentYear = new Date().getFullYear();
+
+        if (year < 1900 || year > currentYear) {
+           alert("Please enter a valid year.");
+           return;
         }
 
         if (month < 1 || month > 12) {
-            alert("Month must be between 1 and 12.");
+           alert("Month must be between 1 and 12.");
+           return;
+        }
+
+        const daysInMonth = new Date(year, month, 0).getDate();
+
+        if (day < 1 || day > daysInMonth) {
+            alert("Please enter a valid day for the selected month.");
             return;
         }
 
+ 
         // Century and year
 
         const CC = Math.floor(year / 100);
